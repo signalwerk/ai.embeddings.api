@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="template--document">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sentence Transformers API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Subline and short introduction" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.signalwerk.ch" />
+    <link
+      href="https://fonts.signalwerk.ch/css/latest/family=Open+Sans:ital,wght@0,300..800;1,300..800.css"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link
+      rel="stylesheet"
+      href="https://rawcdn.githack.com/signalwerk/signalwerk.styles/72d62b5/styles/doc.critical.css"
+      media="all"
+    />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      href="https://rawcdn.githack.com/signalwerk/signalwerk.styles/72d62b5/styles/doc.rest.css"
+      media="all"
+    />
+  </head>
+  <body class="body">
+    <main>
+      <!-- html:children:start -->
+
+      <article class="document">
+        <header class="header">
+          <div class="header__inner">
+            <h1 class="header__title">Sentence Transformers API</h1>
+            <p class="header__subline">Documentation</p>
+            <!-- <p class="header__info">
+              Stefan Huber · September 21, 2025 · additional information
+            </p> -->
+          </div>
+        </header>
+
+        <!-- document:children:start -->
+
+        <div class="document__item">
+          <section class="collection">
+            <!-- collection:children:start -->
+            <h2>Request</h2>
+
+            <pre><code>curl https://domain.tld/v1/embeddings \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $API_KEY" \
+-d '{
+  "input": "Your text goes here",
+  "model": "text-embedding-multilingual-001"
+}'</code></pre>
+
+            <h2>Available Modles</h2>
+
+            <ul>
+              <li>{{ model_name_short }}</li>
+            </ul>
+
+            <!-- collection:children:end -->
+          </section>
+        </div>
+
+        <!-- document:children:end -->
+      </article>
+
+      <!-- html:children:end -->
+    </main>
+  </body>
+</html>

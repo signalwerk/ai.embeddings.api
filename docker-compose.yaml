@@ -1,0 +1,13 @@
+version: "2.3"
+services:
+  sentence_transformers_api:
+    container_name: sentence_transformers_api
+    build: .
+    ports:
+      - "5003:5003"
+    environment:
+      # - SENTENCE_MODEL=bert-base-nli-stsb-mean-tokens
+      - SENTENCE_MODEL=sentence-transformers/distiluse-base-multilingual-cased-v1
+      - SENTENCE_MODEL_SHORT=text-embedding-multilingual-001
+      - PORT=5003
+      - API_KEY:"${API_KEY}"
