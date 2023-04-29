@@ -16,6 +16,7 @@ model_name_short = os.environ.get('SENTENCE_MODEL_SHORT', "text-embedding-multil
 debug = os.environ.get('DEBUG', "false").lower() == "true"
 api_keys = os.environ.get('API_KEY', '').split(',')
 port = int(os.environ.get('PORT', 5003))
+sentence_cache_path = os.environ.get("SENTENCE_TRANSFORMERS_HOME")
 
 if not all(len(api_key) >= 8 for api_key in api_keys):
     print("API_KEY is not set or too short (must be at least 8 characters long).")
@@ -79,7 +80,6 @@ def encode():
 
 if __name__ == '__main__':
 
-    sentence_cache_path = os.environ.get("SENTENCE_TRANSFORMERS_HOME")
     print(f"Sentence Cache Path (SENTENCE_TRANSFORMERS_HOME): {sentence_cache_path}")
 
     encoder = SentenceTransformer(model_name_or_path, cache_folder=sentence_cache_path)
