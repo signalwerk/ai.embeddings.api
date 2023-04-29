@@ -9,4 +9,4 @@ curl http://0.0.0.0:5003/v1/embeddings \
   -d '{
     "input": "Your text goes here",
     "model": "text-embedding-multilingual-001"
-  }'
+  }' | jq '.' > out.json

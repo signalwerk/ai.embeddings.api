@@ -21,6 +21,11 @@ if not all(len(api_key) >= 8 for api_key in api_keys):
     print("API_KEY is not set or too short (must be at least 8 characters long).")
     sys.exit(1)
 
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
 @app.route('/')
 def home():
     return render_template('index.html', model_name_short=model_name_short)

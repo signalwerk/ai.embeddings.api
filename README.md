@@ -1,6 +1,8 @@
 # API for embeddings
 
-Generates sentence embeddings from a input string with the [Sentence-BERT Multi-Lingual Model `distiluse-base-multilingual-cased-v1`](https://www.sbert.net/docs/pretrained_models.html#multi-lingual-models).
+Generates sentence embeddings from a input string with the [Sentence-BERT Multi-Lingual Model `distiluse-base-multilingual-cased-v1`](https://www.sbert.net/docs/pretrained_models.html#multi-lingual-models). Will return an embedding vector of 512 dimensions.
+
+See also [LLaMA embeddings](https://github.com/hlhr202/llama-node).
 
 ## Example requests
 
@@ -19,15 +21,17 @@ curl http://0.0.0.0:5003/v1/embeddings \
   }'
 ```
 
-## Development
+## Installation & Development
 
 ```bash
 python3 -m venv embeddings # create virtual environment
 source embeddings/bin/activate # activate virtual environment
-pip install … # install dependencies
-pip freeze > requirements.txt # save dependencies
+pip install -r requirements.txt
 python app.py # run app
 deactivate # deactivate virtual environment
+# -- during development --
+# pip install … # install dependencies
+# pip freeze > requirements.txt # save dependencies
 ```
 
 ## Thanks
