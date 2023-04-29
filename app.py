@@ -78,7 +78,7 @@ def encode():
     return jsonify(response)
 
 if __name__ == '__main__':
-    encoder = SentenceTransformer(model_name_or_path)
+    encoder = SentenceTransformer(model_name_or_path, cache_folder=os.getenv("SENTENCE_TRANSFORMERS_HOME"))
 
     print(f"Server starting on port {port}...")
 
