@@ -31,7 +31,7 @@ RUN pip3 install pip -U
 RUN pip3 install -r requirements.txt
 
 # Download Sentence Transformers Model
-RUN python3 -c "import os; from sentence_transformers import SentenceTransformer; SentenceTransformer(os.environ.get('SENTENCE_MODEL', 'sentence-transformers/distiluse-base-multilingual-cased-v1'));"
+# RUN python3 -c "import os; from sentence_transformers import SentenceTransformer; SentenceTransformer(os.environ.get('SENTENCE_MODEL', 'sentence-transformers/distiluse-base-multilingual-cased-v1'));"
 
 # Move required resources                     
 RUN mkdir -p /app/templates

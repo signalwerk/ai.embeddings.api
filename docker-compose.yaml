@@ -7,7 +7,10 @@ services:
       - "5003:5003"
     environment:
       # - SENTENCE_MODEL=bert-base-nli-stsb-mean-tokens
+      - SENTENCE_TRANSFORMERS_HOME=/sentence_transformers
       - SENTENCE_MODEL=sentence-transformers/distiluse-base-multilingual-cased-v1
       - SENTENCE_MODEL_SHORT=text-embedding-multilingual-001
       - PORT=5003
       - API_KEY:"${API_KEY}"
+    volumes:
+      - /DATA/embeddings/sentence_transformers/:/sentence_transformers
