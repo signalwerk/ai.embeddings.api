@@ -24,6 +24,7 @@ if not all(len(api_key) >= 8 for api_key in api_keys):
 @app.after_request
 def add_cors_headers(response):
     response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
     return response
 
 @app.route('/')
